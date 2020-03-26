@@ -1,0 +1,45 @@
+#shortcut_wrap {
+  background: #e3e4e5;
+  border-bottom: 1px solid #ddd;
+
+  div {
+    margin: 0 auto;
+    background-color: #e3e4e5;
+    height: 30px;
+  }
+
+}
+
+.shortcut .left {
+  padding-left: 7px;
+  padding-right: 7px;
+  float: left;
+  height: 28px;
+  font: 12px/28px Microsoft;
+  color: #999;
+}
+
+.shortcut .right li:nth-of-type(2n) {
+  @extend .spacer;
+}
+
+.shortcut .right {
+  float: right;
+
+  li {
+    padding: 0 7px;
+
+    a {
+      height: 30px;
+      color: #999;
+      font: 12px/30px Microsoft YaHei;
+    }
+
+    float: left;
+  }
+}
+
+.shortcut #regist,
+#shortcut_wrap .shortcut .s {
+  color: $c1; 
+}

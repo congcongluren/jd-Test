@@ -1,0 +1,22 @@
+//导入初始化
+@import "../sass/publicStyle/reset.scss";
+//导入公共样式
+@import "../sass/publicStyle/some.scss";
+
+//shortcart
+.shortcut{
+  width: 990px;
+}
+@import "../sass/publicStyle/shortcut.scss";
+
+//head
+.head{
+  width: 990px;
+  padding: 10px 0 0;
+}
+
+//footer
+#footer_wrap{
+  background-color: #eaeaea;
+} 
+@import "../sass/publicStyle/footer.scss";
