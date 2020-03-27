@@ -3,9 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>???</title>
+  <title>商品列表</title>
+  <link rel="stylesheet" href="../css/list.css">
 </head>
 <body>
-  
+
+  <!-- 商品列表 -->
+  <div class="goods-wrap">
+    <div class="goods">
+      <ul class="clearfix">
+      </ul>
+      <li class="g-item" style="display: none;">
+
+        <!-- 图片 -->
+        <a href="./detail.html" class="gl-img">
+          <img src="https://img14.360buyimg.com/n7/jfs/t1/79941/9/14149/392050/5db93681Ef1ac5eff/e60a0b5ea88a360a.jpg" alt="">
+        </a>
+        <!-- 价格 -->
+        <div class="gl-price">
+          <em>￥</em><i>456</i>
+        </div>
+        <!-- 标题 -->
+        <div class="gl-title">
+          <a href="./detail.html">【满105-6元】全店9.9元起，惹火猫&米涩&日本AICE&云曼，倾情献礼！保密到家！更多好礼戳我抢购！</a>
+        </div>
+        <!-- 评论数 -->
+        <div class="gl-opinion">
+          已有<span>3.3万+</span>人评价
+        </div>
+        <!-- 加入购物车 -->
+        <button>加入购物车</button>
+      </li>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../script/jquery.pagination.js"></script>
+  <script src="../script/list.js"></script>
 </body>
 </html>

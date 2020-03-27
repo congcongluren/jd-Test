@@ -1,0 +1,71 @@
+@import './publicStyle/reset.scss';
+@import './publicStyle/some2.scss';
+
+.goods {
+  margin: 0 auto;
+  width: 1390px;
+
+  ul {
+    margin-left: 220px;
+    padding-bottom: 30px;
+    font: 12px/20px Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    // 商品整体样式
+    li {
+      width: 218px;
+      height: 400px;
+      float: left;
+      padding: 38px 9px 10px;
+      border: 1px solid #ffffff;
+
+      &:hover {
+        border-color: #eeeeee;
+      }
+    }
+
+    // 图片
+    .gl-img {
+      display: block;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 15px;
+    }
+
+    // 价格 
+    .gl-price {
+      line-height: 22px;
+      height: 22px;
+      margin-bottom: 8px;
+      em{
+        color: #e4393c;
+        font-size: 16px;
+        font-weight: 800;
+      }
+      i{
+        color: #e4393c;
+        font-size: 20px;
+        font-weight: 800;
+      }
+    }
+
+    // 标题
+    .gl-title {
+      width: 220px;
+      height: 40px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    // 评论数
+    .gl-opinion {
+      width: 100%;
+      height: 18px;
+      margin-bottom: 9px;
+      color: #a7a7a7;
+
+      span {
+        font-weight: 800;
+        color: #646fb0;
+      }
+    }
+  }
+}
