@@ -1,0 +1,100 @@
+@import './publicStyle/reset.scss';
+// 导入重置样式  
+@import './publicStyle/some2.scss';
+// 导入默认样式
+
+.product {
+  width: 1210px;
+  margin: 0 auto;
+
+  // 商品图片外层
+  .p-pic {
+    width: 350px;
+    position: relative;
+    float: left;
+  }
+
+  // 小放大镜
+  .sf {
+    position: absolute;
+    background: #fede4f;
+    opacity: 0.3;
+    visibility: hidden;
+  }
+
+  //大放大镜
+  .bf {
+    position: absolute;
+    visibility: hidden;
+    width: 540px;
+    height: 540px;
+    top: 0;
+    left: 355px;
+    overflow: hidden;
+
+    //大图
+    .bpic {
+      position: absolute;
+    }
+  }
+
+  // 小图
+  .main-pic {
+    margin: 0 0 20px;
+
+    .spic {
+      width: 350px;
+      height: 350px;
+    }
+  }
+
+  //图片切换
+  .tabpic {
+    position: relative;
+
+    // 图片列表外框
+    .piclist-wrap {
+      height: 56px;
+      width: 300px;
+      position: absolute;
+      left: 25px;
+      overflow: hidden;
+    }
+
+    //图片列表
+    .piclist {
+      position: absolute;
+
+      li {
+        margin: 0 2px;
+        float: left;
+        border: 1px solid #ffffff;
+      }
+    }
+
+    img {
+      width: 54px;
+      height: 54px;
+    }
+
+    //按钮 
+    .btn {
+      width: 22px;
+      height: 32px;
+      margin: 11px 0px;
+      background-image: url('../img/detail_pic_some.png');
+    }
+
+    .p-left {
+      float: left;
+      margin-left: 0;
+      background-position: 0 -54px;
+    }
+
+    .p-right {
+      float: right;
+      margin-right: 0;
+      background-position: -78px 0;
+    }
+  }
+}

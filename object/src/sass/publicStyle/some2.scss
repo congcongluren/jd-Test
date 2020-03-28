@@ -12,6 +12,11 @@ $c2 : #f4f4f4;
   clear: both;
 }
 
+//设置按钮类手型
+.btn, .link{
+  cursor: pointer;
+}
+
 //选中红色
 #style_red {
   color: #e1251b;
