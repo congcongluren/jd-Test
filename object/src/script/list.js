@@ -1,6 +1,6 @@
 ! function ($) {
   $.ajax({
-    url: 'http://localhost/jd-Test/object/src/php/getgoods.php',
+    url: 'http://localhost/jd-Test/object/php/getgoods.php',
     data: {
 
     },
