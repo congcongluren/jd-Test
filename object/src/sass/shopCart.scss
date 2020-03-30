@@ -1,22 +1,83 @@
 //导入初始化
 @import "../sass/publicStyle/reset.scss";
 //导入公共样式
-@import "../sass/publicStyle/some.scss";
+@import "../sass/publicStyle/some2.scss";//
 
 //shortcart
-.shortcut{
+.shortcut {
   width: 990px;
 }
+
 @import "../sass/publicStyle/shortcut.scss";
 
-//head
-.head{
-  width: 990px;
-  padding: 10px 0 0;
+//给文本框，按钮设置默认样式 
+%forinput {
+  border: 0;
+  display: block;
+  float: left;
+  height: 100%;
 }
 
+//head
+.head {
+  width: 990px;
+  padding: 10px 0 0;
+  margin: 0 auto;
+
+  .logo {
+    width: 277px;
+    height: 50px;
+    margin: 15px 0 20px;
+    float: left;
+    padding: 0 0 0 150px;
+    background: url('../img/headpic-cart.png') no-repeat;
+
+    a {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 64px;
+    }
+  }
+
+  .head-search {
+    float: right;
+    margin-top: 30px;
+
+    .form {
+      border: 2px solid #c91623;
+      height: 24px;
+    }
+
+    input {
+      @extend %forinput;
+      height: 18px;
+      line-height: 18px;
+      width: 260px;
+      padding: 3px 5px;
+      overflow: hidden;
+    }
+
+    button {
+      color: #ffffff;
+      @extend %forinput;
+      width: 55px;
+      background: #c91623;
+    }
+  }
+}
+
+//cart-container购物车商品列表容器
+#cart-container-wrap{
+  // 表头
+  .goods-thead{
+    
+  }
+}
+
+
 //footer
-#footer_wrap{
+#footer_wrap {
   background-color: #eaeaea;
-} 
+}
+
 @import "../sass/publicStyle/footer.scss";
