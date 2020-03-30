@@ -1,7 +1,7 @@
 //导入初始化
 @import "../sass/publicStyle/reset.scss";
 //导入公共样式
-@import "../sass/publicStyle/some2.scss";//
+@import "../sass/publicStyle/some2.scss"; //
 
 //shortcart
 .shortcut {
@@ -67,10 +67,215 @@
 }
 
 //cart-container购物车商品列表容器
-#cart-container-wrap{
+#cart-container-wrap {
+  .cart-container {
+    width: 990px;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 20px;
+    color: #666666;
+  }
+
   // 表头
-  .goods-thead{
-    
+  .goods-thead {
+    height: 32px;
+    line-height: 32px;
+    margin: 0 0 10px;
+    padding: 5px 0;
+    background: #f3f3f3;
+    border: 1px solid #e9e9e9;
+
+    div {
+      float: left;
+    }
+
+    .all {
+      height: 18px;
+      line-height: 18px;
+      padding-top: 7px;
+      width: 122px;
+      padding-left: 9px;
+    }
+    .gt-2{
+      width: 470px;
+    }
+    .gt-3{
+      width: 100px;
+    }
+    .gt-3{
+      width: 100px;
+    }
+    .gt-4{
+      width: 115px;
+    }
+    .gt-5{
+      width: 80px;
+    }
+  }
+
+  // 商品内容
+  .c-list {
+
+    // 店铺名
+    .shop-name {
+      height: 30px;
+      padding: 0 0 0 10px;
+    }
+
+    // 商品外层
+    .c-goods-wrap {
+      border-width: 2px 1px 1px;
+      border-color: #aaa #f1f1f1 #f1f1f1;
+      border-style: solid;
+      margin-bottom: 20px;
+    }
+    // 商品容器
+    .c-goods {
+      border-top: 1px solid #f1f1f1;
+      padding-top: 15px;
+      height: 118px;
+      width: 100%;
+      div {
+        float: left;
+      }
+    }
+
+    // 商品选中
+    .g-checked {
+      padding: 5px 0 0 10px;
+      width: 30px;
+    }
+
+    // 商品标题
+    .g-title {
+      margin-left: 10px;
+      width: 208px;
+
+      a {
+        color: #333333;
+      }
+    }
+
+    // 商品信息
+    .g-message {
+      width: 130px;
+      margin-left: 20px;
+    }
+
+    // 商品价格
+    .g-price {
+      text-align: right;
+      color: #333333;
+      width: 150px;
+      margin-right: 40px;
+
+      strong {
+        font-weight: 500;
+      }
+    }
+
+    // 商品数量
+    .g-num {
+      font-size: 0;
+
+      a {
+        float: left;
+        // display: inline-block;
+        border: 1px solid #cacbcb;
+        height: 18px;
+        line-height: 18px;
+        width: 16px;
+        text-align: center;
+      }
+
+      input {
+        float: left;
+        // display: inline-block;
+        border: 1px solid #cacbcb;
+        border-width: 1px 0;
+        width: 42px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        font-size: 12px;
+        color: #333;
+        vertical-align: middle;
+      }
+    }
+
+    // 总价格
+    .g-sumpri{
+      width: 100px;
+      margin-right: 40px;
+      text-align: right;
+      font-weight: 900;
+    }
+
+    // 删除商品
+
+  }
+
+  //结算
+  .cart-toolbar-wrap{
+    border: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+    .cart-toolbar{
+      width: 988px;
+      margin: 0 auto;
+    }
+    // 左侧区域  
+    .c-t-left{
+      float: left;
+      height: 50px;
+      line-height: 50px;
+    }
+    input{
+      margin: 16px 9px;
+    }
+    // 右侧区域
+    .c-t-right{
+      float: right;
+      height: 50px;
+      line-height: 50px;
+    }
+    .calc{
+      float: right;
+      margin: -1px 0;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 51px;
+      text-align: center;
+      width: 94px;
+      height: 51px;
+      background: #e54346;
+    }
+    .choose{padding-top: 9px;
+      float: left;
+      margin-right: 30px;
+      line-height: 12px;
+      i{
+        font-weight: 900;
+        color: $c1;
+      }
+    }
+    .t-r-price{
+      float: left;
+    }
+    .allprice{
+      height: 30px;
+      line-height: 30px;
+      margin-right: 10px;
+      b{
+        font-size: 16px;
+        color: #E2231A;
+        font-weight: 700;
+      }
+    }
+    .delprice{
+      line-height: 20px;
+      height: 20px;
+    }
   }
 }
 
