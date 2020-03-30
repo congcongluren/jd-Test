@@ -94,28 +94,51 @@
     $(this).css('border-color', 'red').siblings('li').css('border-color', '#ffffff')
   });
   //点击切换
-  $pLeft.on('click', function(){
+  $pLeft.on('mousedown', function(){
     $num--;
-    let $allLen = $piclist.find('li').length;
-
     if($num >= 5){
+      $(this).css('opacity', 0.8)
       let $spit = ($num - 5) * $piclist.find('li').outerWidth(true);
-      $piclist.css('left', $spit)
+      $piclist.css('left', -$spit)
     }else{
       $num = 5;
     }
   })
+  $pLeft.on('mouseup', function(){
+    let $allLen = $piclist.find('li').length;
+    if($num < $allLen){
+      $pRight.css('opacity', 0.5);
+    }
 
-  $pRight.on('click', function(){
+    if($num > 5){
+      $(this).css('opacity', 0.5);
+    }else{
+      $(this).css('opacity', 0.3);
+    }
+
+  })
+
+
+  $pRight.on('mousedown', function(){
     $num++;
     let $allLen = $piclist.find('li').length;
+    $(this).css('opacity', 0.8);
     
     if($num <= $allLen){
+      $pLeft.css('opacity', 0.5);
+
       let $spit = ($num - 5) * $piclist.find('li').outerWidth(true);
       $piclist.css('left', -$spit)
-      console.log($spit);
     }else{
       $num = $allLen;
+    }
+  })
+  $pRight.on('mouseup', function(){
+    let $allLen = $piclist.find('li').length;
+    if($num == $allLen){
+      $(this).css('opacity', 0.3);
+    }else{
+      $(this).css('opacity', 0.5);
     }
   })
   
