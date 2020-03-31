@@ -7,7 +7,6 @@ let jscookie = {
     get: function (key) {
         let cookiearr = decodeURIComponent(document.cookie).split('; ');
         for (let i = 0; i < cookiearr.length; i++) {
-            console.log(cookiearr[i].split('='));
             let newarr = cookiearr[i].split('=');
             if (key === newarr[0]) {
                 return newarr[1];
