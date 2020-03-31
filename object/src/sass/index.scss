@@ -111,7 +111,8 @@ body>div>div {
   }
 }
 
-.header_center .sc {
+.header_center .sc a{
+  display: block;
   position: absolute;
   right: 25px;
   top: 15px;
@@ -222,9 +223,6 @@ body>div>div {
       height: 470px;
       left: 200px;
       top: 0;
-      div{
-        // display: none;
-      }
     }
   }
 

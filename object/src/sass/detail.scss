@@ -6,6 +6,7 @@
 .product {
   width: 1210px;
   margin: 0 auto;
+  font-size: 12px;
 
   // 商品图片外层
   .p-pic {
@@ -97,6 +98,114 @@
       float: right;
       margin-right: 0;
       background-position: -78px 0;
+    }
+  }
+
+  //商品信息
+  .p-info {
+    float: left;
+    width: 590px;
+    margin: 0 25px 0 30px;
+
+    // 商品名
+    .p-title {
+      width: 100%;
+      font: 700 16px Arial, "microsoft yahei";
+      color: #666;
+      padding-top: 10px;
+      line-height: 28px;
+      margin-bottom: 5px;
+
+      // 京东超市图片
+      img {
+        margin-top: 5px;
+        margin-right: 5px;
+        float: left;
+      }
+    }
+
+    // 价格区域
+    .p-area {
+      height: 123px;
+      padding: 10px 0 0 10px;
+      background: #f3f3f3;
+    }
+
+    .g-price {
+      padding-bottom: 5px;
+
+      i {
+        font-size: 16px;
+        color: $c1;
+      }
+
+      strong {
+        font-size: 22px;
+        color: $c1;
+      }
+    }
+
+    .g-p-bottom {
+      padding-bottom: 5px;
+
+      i {
+        font-size: 16px;
+      }
+
+      strong {
+        font-size: 22px;
+      }
+    }
+
+    // 设置数量，加入购物车
+    .p-choose {
+      border-top: 1px dotted #dfdfdf;
+      margin-top: 15px;
+      padding-top: 30px;
+      input {
+        display: block;
+        float: left;
+        width: 43px;
+        height: 45px;
+        line-height: 45px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 14px;
+        border-right: none;
+      }
+    }
+
+    .c-btn {
+      float: left;
+      font-size: 0;
+      margin-right: 20px;
+      a {
+        // float: left;
+        display: block;
+        width: 15px;
+        height: 22px;
+        text-align: center;
+        line-height: 22px;
+        overflow: hidden;
+        background: #f1f1f1;
+        color: #666;
+        border: 1px solid #ccc;
+      }
+      .add{
+        border-top: none;
+      }
+    }
+
+    .addcart {
+      display: block;
+      float: left;
+      height: 47px;
+      line-height: 47px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+      padding: 0 26px;
+      background: $c1;
     }
   }
 }

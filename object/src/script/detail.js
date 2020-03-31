@@ -1,4 +1,4 @@
-!function($){
+! function ($) {
   //获取目标对象
   let $sf = $('.sf');
   let $bf = $('.bf');
@@ -6,24 +6,38 @@
   let $bpic = $('.bpic');
   let $mainPic = $('.main-pic');
   let $bili = 2.5;
+  // 获取标题和图片
+  let $title = $('.p-title span');
+  let $price = $('.g-price strong');
   // ----------------------------
+  // 获取sid
+  let $sid = window.location.search.substring(1).split('=')[1];
+  if (!$sid) {
+    $sid = 1;
+  }
+
   // 加载对应的图片
   $.ajax({
     url: 'http://localhost/jd-test/object/php/gitsid.php',
     data: {
-      sid: 1
+      sid: $sid
     },
     dataType: 'json'
-  }).done(function(res){
+  }).done(function (res) {
+    console.log(res);
+    
     let $spicarr = res.spicurl.split(',');
     let $bpicarr = res.bpicurl.split(',');
     let $strhtml = '';
-
+    // 设置价格及商品名
+    $title.html(res.title);
+    $price.html(res.price);
+    // 设置图片
     $spic.attr('src', res.url)
     $bpic.attr('src', res.url);
 
-    $.each($spicarr, function(index, value){
-      $strhtml  += `
+    $.each($spicarr, function (index, value) {
+      $strhtml += `
         <li>
           <img src = '${value}' bpicurl = '${$bpicarr[index]}'/>
         </li>
@@ -31,51 +45,53 @@
     });
 
     $('.piclist').html($strhtml)
+    
   })
+  
   // ------------------------------
   //放大镜效果
   // 设置小放大镜大图默认大小
   $sf.css({
-    width : $bf.width() / $bili,
-    height : $bf.height() / $bili
+    width: $bf.width() / $bili,
+    height: $bf.height() / $bili
   })
   $bpic.css({
-    width : $spic.width() * $bili,
-    height : $spic.height() * $bili
+    width: $spic.width() * $bili,
+    height: $spic.height() * $bili
   })
   // 鼠标移入事件
-  $mainPic.hover(function(){
+  $mainPic.hover(function () {
     $sf.css('visibility', 'visible');
     $bf.css('visibility', 'visible');
-    $(this).on('mousemove', function(ev){
-      
+    $(this).on('mousemove', function (ev) {
+
       let $sfleft = ev.pageX - $mainPic.offset().left - $sf.width() / 2;
       let $sftop = ev.pageY - $mainPic.offset().top - $sf.height() / 2;
-      
+
       //判断左右
-      if($sfleft < 0){
+      if ($sfleft < 0) {
         $sfleft = 0
-      }else if($sfleft > $mainPic.width() - $sf.width()){
+      } else if ($sfleft > $mainPic.width() - $sf.width()) {
         $sfleft = $mainPic.width() - $sf.width();
       }
       //判断上下
-      if($sftop < 0){
+      if ($sftop < 0) {
         $sftop = 0
-      }else if($sftop > $mainPic.height() - $sf.height()){
+      } else if ($sftop > $mainPic.height() - $sf.height()) {
         $sftop = $mainPic.height() - $sf.height();
       }
       //设置小放大镜
       $sf.css({
-        left : $sfleft,
-        top : $sftop
+        left: $sfleft,
+        top: $sftop
       })
       //设置大图
       $bpic.css({
-        left : -$sfleft * $bili,
-        top : -$sftop * $bili
+        left: -$sfleft * $bili,
+        top: -$sftop * $bili
       })
     })
-  },function(){
+  }, function () {
     $sf.css('visibility', 'hidden');
     $bf.css('visibility', 'hidden');
   })
@@ -86,7 +102,7 @@
   let $pRight = $('.p-right');
   let $num = 5;
   //鼠标移入切换
-  $piclist.on('mouseover','li',function(){
+  $piclist.on('mouseover', 'li', function () {
     let $simgurl = $(this).find('img').attr('src');
     let $bimgurl = $(this).find('img').attr('bpicurl');
     $spic.attr('src', $simgurl);
@@ -94,52 +110,52 @@
     $(this).css('border-color', 'red').siblings('li').css('border-color', '#ffffff')
   });
   //点击切换
-  $pLeft.on('mousedown', function(){
+  $pLeft.on('mousedown', function () {
     $num--;
-    if($num >= 5){
+    if ($num >= 5) {
       $(this).css('opacity', 0.8)
       let $spit = ($num - 5) * $piclist.find('li').outerWidth(true);
       $piclist.css('left', -$spit)
-    }else{
+    } else {
       $num = 5;
     }
   })
-  $pLeft.on('mouseup', function(){
+  $pLeft.on('mouseup', function () {
     let $allLen = $piclist.find('li').length;
-    if($num < $allLen){
+    if ($num < $allLen) {
       $pRight.css('opacity', 0.5);
     }
 
-    if($num > 5){
+    if ($num > 5) {
       $(this).css('opacity', 0.5);
-    }else{
+    } else {
       $(this).css('opacity', 0.3);
     }
 
   })
 
 
-  $pRight.on('mousedown', function(){
+  $pRight.on('mousedown', function () {
     $num++;
     let $allLen = $piclist.find('li').length;
     $(this).css('opacity', 0.8);
-    
-    if($num <= $allLen){
+
+    if ($num <= $allLen) {
       $pLeft.css('opacity', 0.5);
 
       let $spit = ($num - 5) * $piclist.find('li').outerWidth(true);
       $piclist.css('left', -$spit)
-    }else{
+    } else {
       $num = $allLen;
     }
   })
-  $pRight.on('mouseup', function(){
+  $pRight.on('mouseup', function () {
     let $allLen = $piclist.find('li').length;
-    if($num == $allLen){
+    if ($num == $allLen) {
       $(this).css('opacity', 0.3);
-    }else{
+    } else {
       $(this).css('opacity', 0.5);
     }
   })
-  
-}(jQuery)
+
+}(jQuery);
